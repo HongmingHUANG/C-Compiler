@@ -1,0 +1,84 @@
+const int MAX_CHARACTER=256;
+const int MAX_LENGTH=1024;
+const char HINT='H';
+const char ADD_HINT='A';
+const char QUERY_HINT='Q';
+
+int counter[256];
+char tmp_word[1024];
+
+void add_word(){
+	int i;
+	i=0;
+	while(tmp_word[i]>0)
+	{
+		counter[tmp_word[i]]=counter[tmp_word[i]]+1;
+		i=i+1;
+	}
+	return ;
+}
+
+int check_times(char ch){
+	int ans;
+	ans=counter[ch-0];
+	return (ans);
+}
+
+void main(){
+	const char conststr='c';
+	int tmp,op,a,b,i,times;
+	int loopflag;
+	char buf[1024];
+	loopflag=1;
+	
+	a=+3;
+	a=-b+2;
+	a=3*(-2);
+	tmp=2*3;
+	tmp=tmp/(1+1);
+	i=0;
+	while(i<MAX_CHARACTER){
+		counter[i]=0;
+		i=i+1;
+	}
+	if(tmp!=3)
+	{
+		printf("Mult and devide error!");
+		return ;
+	}
+	while(loopflag){
+		scanf(op);
+		printf(HINT);
+		switch(op){
+			case 0:{
+				printf("Input 1 to add new text.");
+				printf("Input 2 to check a character's appearance time.");
+				printf("Input -1 to exit");
+			}
+			case 1:{
+				printf(ADD_HINT);
+				scanf(buf);
+				add();
+				printf("Success added!");
+			}
+			case 2:{
+				printf(QUERY_HINT);
+				scanf(buf);
+				tmp=0;
+				i=0;
+				while(buf[i]!=0){
+					tmp=tmp+1;
+					i=i+1;
+				}
+				if(tmp==1){
+					times=check_times(buf[0]);
+					printf("This charactor's appearance time is:",times);
+				}
+			}
+			case -1:{
+				loopflag=0;
+			}
+		}
+	}
+	printf("Program will be terminated.");
+}

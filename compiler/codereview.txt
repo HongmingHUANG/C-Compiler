@@ -1,0 +1,9 @@
+数组：
+一、syntax.cpp
+	char buf[2333]
+	char tmp_ident[23]
+二、four_table
+	four fours[20000]
+三、sym_table
+	int level_last[2] checked
+	sym_term table[10000]
